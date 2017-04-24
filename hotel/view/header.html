@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SISFARIAN | Sistema Hotelero</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->    
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="public/css/font-awesome.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="public/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="public/css/_all-skins.min.css">
+    <link rel="stylesheet" type="text/css" href="public/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="public/css/dataTables.bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="public/js/swat/sweet/lib/sweet-alert.css">
+    <link rel="stylesheet" type="text/css" href="public/css/buttons.dataTables.min.css">
+
+    <!-- jQuery 2.1.4 -->
+    <script type="text/javascript" src="public/js/jquery.min.js"></script>
+    <script type="text/javascript" src="public/js/jquery.numeric.min.js"></script>
+    <!-- Bootstrap 3.3.5 -->
+    <script type="text/javascript" src="public/js/bootstrap.min.js"></script>
+    <!-- AdminLTE App -->
+    <script type="text/javascript" src="public/js/app.min.js"></script>
+    <script type="text/javascript" src="public/js/bootbox.min.js"></script>
+ 
+    <script type="text/javascript" src="public/js/dataTables.js"></script>
+
+    <script type="text/javascript" src="public/js/swat/sweet/lib/sweet-alert.min.js"></script>
+  
+
+    <script type="text/javascript" src="public/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="public/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="public/js/jszip.min.js"></script>
+    <script type="text/javascript" src="public/js/pdfmake.min.js"></script>
+    <script type="text/javascript" src="public/js/vfs_fonts.js"></script>
+    <script type="text/javascript" src="public/js/buttons.html5.min.js"></script>
+    <script type="text/javascript" src="public/js/Chart.js"></script>
+
+  
+  
+
+
+  <style type="text/css">
+    input[type="text"]{
+      text-align: center;
+    }
+  </style>
+
+  </head>
+  <body class="hold-transition skin-blue sidebar-mini">
+    
+    <div class="wrapper">
+
+      <header class="main-header">
+
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+          <!-- mini logo for sidebar mini 50x50 pixels -->
+          <span class="logo-mini"><b>SISFARIAN</b></span>
+          <!-- logo for regular state and mobile devices -->
+          <span class="logo-lg"><b>SISFARIAN</b> ®</span>
+        </a>
+
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top" role="navigation">
+          <!-- Sidebar toggle button-->
+          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Navegación</span>
+          </a>
+          <!-- Navbar Right Menu -->
+          <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+              <!-- Messages: style can be found in dropdown.less-->
+              <!-- Notifications: style can be found in dropdown.less -->
+              
+              <!-- User Account: style can be found in dropdown.less -->
+              <li class="dropdown user user-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <img src="Files/Sucursal/hotel.ico" class="user-image" alt="User Image">
+                  <span class="hidden-xs">HOTEL SHARIAN</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <!-- User image -->
+                  <li class="user-header">
+                    <img src="Files/Sucursal/hotel.ico" class="img-circle" alt="User Image">
+                <!--     <p>
+                     <?php echo $_SESSION["empleado"] ?> - <?php echo $_SESSION["tipo_usuario"] ?> 
+
+                     <small><?php echo $_SESSION["tipo_usuario"] ?>, <?php echo $_SESSION["sucursal"]?> <?php echo $_SESSION["direccion"]?> </small> -->
+                     <p>
+                     <small>Usuario </small>
+                     <small><?php echo $_SESSION["empleado"]; ?></small>
+                    </p> 
+                  </li>
+                  
+                  <!-- Menu Footer-->
+                  <li class="user-footer">
+                 <!--    <div class="pull-left">
+                      <a href="acceder.php" class="btn btn-default btn-flat">Cambiar Sucursal</a>
+                    </div> -->
+                    <div class="pull-right">
+                      <a href="ajax/UsuarioAjax.php?op=Salir" class="btn btn-default btn-flat">Salir</a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              
+            </ul>
+          </div>
+
+        </nav>
+      </header>
+      <!-- Left side column. contains the logo and sidebar -->
+      <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+          <!-- Sidebar user panel -->
+          <div class="user-panel">
+            <div class="pull-left image">
+              <img src="<?php echo $_SESSION["foto"] ?>" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+              <p><?php echo $_SESSION["empleado"] ?></p>
+              <a href="#"><i class="fa fa-circle text-success"></i>Online</a>
+            </div>
+          </div>
+          
+          <!-- sidebar menu: : style can be found in sidebar.less -->
+          <ul class="sidebar-menu">
+            <li class="header"></li>
+            <li id="liEstadistica" class="active treeview">
+             
+                <a href="Principal.php"><i class="fa fa-dashboard"></i> <span>Inicio</span></a> <i class="fa fa-angle-left pull-right"></i>
+
+              
+              
+            </li>
+              <li>
+              <a href="Cliente.php">
+                <i class="fa fa-users" id="liClientela"></i> <span>Clientes</span>
+               
+              </a>
+            </li>
+            
+           
+          
+            </li>
+         
+
+
+
+              <li class="treeview" id="liRecepcion">
+              <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span>Recepcion</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li id="liHospedaje"><a href="Hospedaje.php"><i class="fa fa-circle-o"></i> Registro de Entrada</a></li>
+                <li id="liControlHabitaciones"><a href="ControlHabitaciones.php" accesskey="b"><i class="fa fa-circle-o"></i> Registro de Salida</a></li>
+                 <li id="liConsumos"><a href="Consumos.php" accesskey="b"><i class="fa fa-circle-o"></i> Registro de Consumos</a></li>
+         
+              </ul>
+
+              
+              
+               
+            </li>
+
+        
+      
+       
+     
+             <li>
+              <a href="Files/Manual/Manual.pdf" target="_blank">
+                <i class="fa fa-plus-square"></i> <span>Ayuda</span>
+                <small class="label pull-right bg-red">PDF</small>
+              </a>
+            </li>
+            <li>
+              <a href="Acerca.php">
+                <i class="fa fa-info-circle" id="liAcerca"></i> <span>Acerca De...</span>
+                <small class="label pull-right bg-yellow">SISFARIAN</small>
+              </a>
+            </li>
+            <li>
+              <a href="ajax/UsuarioAjax.php?op=Salir">
+                <i class="fa fa-close"></i> <span>Cerrar Sesion</span>
+                
+              </a>
+            </li>
+                        
+          </ul>
+        </section>
+        <!-- /.sidebar -->
+      </aside>
+
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        
+        <!-- Main content -->
+        <section class="content">
+          
+          <div class="row">
+            <div class="col-md-12">
+              <input type="hidden" name="txtMnuAlmacen" id="txtMnuAlmacen" value="<?php echo $_SESSION["mnu_almacen"]; ?>">
+              <input type="hidden" name="txtMnuAlmacen" id="txtMnuCompras" value="<?php echo $_SESSION["mnu_compras"]; ?>">
+              <input type="hidden" name="txtMnuAlmacen" id="txtMnuVentas" value="<?php echo $_SESSION["mnu_ventas"]; ?>">
+              <input type="hidden" name="txtMnuAlmacen" id="txtMnuMantenimiento" value="<?php echo $_SESSION["mnu_mantenimiento"]; ?>">
+              <input type="hidden" name="txtMnuAlmacen" id="txtMnuSeguridad" value="<?php echo $_SESSION["mnu_seguridad"]; ?>">
+              <input type="hidden" name="txtMnuAlmacen" id="txtMnuConsultaCompras" value="<?php echo $_SESSION["mnu_consulta_compras"]; ?>">
+              <input type="hidden" name="txtMnuAlmacen" id="txtMnuConsultaVentas" value="<?php echo $_SESSION["mnu_consulta_ventas"]; ?>">
+              <input type="hidden" name="txtMnuAlmacen" id="txtMnuAdmin" value="<?php echo $_SESSION["mnu_admin"]; ?>">
